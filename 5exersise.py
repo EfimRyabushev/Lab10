@@ -1,0 +1,12 @@
+data = open('input.txt', 'r')
+lines = data.readlines()
+lines = list (map (lambda x: x.rstrip(), lines))
+lines = list (map (lambda x: x.split('-'), lines))
+lines.pop()
+dictionary = dict(lines)
+items = list(dictionary.keys())
+items.sort()
+data = open('output.txt', 'w')
+for i in items:
+   data.write(i + '	-	' + dictionary[i] + '\n')
+data.close()
